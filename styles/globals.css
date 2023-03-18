@@ -22,3 +22,6 @@ body {
   color: #e7e8e8;
   background: #0f1318;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
