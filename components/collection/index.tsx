@@ -8,14 +8,11 @@ import { nfts } from "../../data/nfts";
 const Collection = () => {
   const address = useAddress();
   const { contract } = useContract(contractAddress, "nft-collection");
-  const { data: ownNft, isLoading: ownNFtLoading } = useOwnedNFTs(
-    contract,
-    address
-  );
+  const { data: ownNft, isLoading } = useOwnedNFTs(contract, address);
   const [nftsData, setNftsData] = useState<NFT[] | []>([]);
 
   const fetchCollection = async () => {
-    if (!ownNFtLoading && address) {
+    if (!isLoading && address) {
       if (!ownNft) return nfts;
       ownNft.forEach((nft) => {
         const index = nfts.findIndex(
@@ -52,8 +49,9 @@ const Collection = () => {
       price,
       to: address!,
     };
-    const signature = await contract?.signature.generate(metadata);
+
     try {
+      const signature = await contract?.signature.generate(metadata);
       await contract?.signature.mint(signature!);
 
       nfts[id].minted = true;
@@ -64,7 +62,7 @@ const Collection = () => {
   useEffect(() => {
     fetchCollection();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ownNft, ownNFtLoading, address]);
+  }, [ownNft, isLoading, address]);
   return (
     <section className="grid justify-around mt-7 mx-8 ">
       <div className="flex flex-wrap justify-center md:justify-between gap-5 md:gap-10 max-auto w-full flex-start">
@@ -73,7 +71,7 @@ const Collection = () => {
             Connect Your Wallet: Goerli Network
           </h1>
         ) : (
-          ownNFtLoading && (
+          isLoading && (
             <>
               <div role="status" className="place-self-center ">
                 <svg

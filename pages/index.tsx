@@ -1,8 +1,6 @@
 import { ConnectWallet } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import Collection from "../components/collection";
-import styles from "../styles/Home.module.css";
-require("dotenv").config();
 
 const Home: NextPage = () => {
   return (
