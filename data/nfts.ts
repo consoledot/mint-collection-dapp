@@ -44,10 +44,17 @@ export const nfts: NFT[] = [
     price: 0.03,
   },
   {
-    id: 5,
-    name: "NFT 6",
-    description: "This is our sixth amazing NFT",
-    url: "https://bafybeiftcf7xruf4gmlbme6bos5tznlrvz46xfxdnofp3auibvzbizysoy.ipfs.nftstorage.link/",
-    price: 0.03,
+    id: 6,
+    name: "One Ape",
+    description: "Some bored ape",
+    url: "https://bafkreibkl7qq72j3tlamzycppst6kchzm5lclctwtnjhq5hlizaq2j33mi.ipfs.nftstorage.link/",
+    price: 0.01,
+  },
+  {
+    id: 7,
+    name: "Some other",
+    description: "maybe its me",
+    url: "https://bafkreia3k5r4ekbbstbv32at57jcsch4qkht4l4vbcmajb5llw3dxuzpp4.ipfs.nftstorage.link/",
+    price: 0.02,
   },
 ];

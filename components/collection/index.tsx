@@ -5,7 +5,6 @@ import { useAddress, useContract, useOwnedNFTs } from "@thirdweb-dev/react";
 import { contractAddress } from "../../utils/constant";
 import { nfts } from "../../data/nfts";
 
-import "react-loading-skeleton/dist/skeleton.css";
 const Collection = () => {
   const address = useAddress();
   const { contract } = useContract(contractAddress, "nft-collection");
@@ -16,7 +15,7 @@ const Collection = () => {
   const [nftsData, setNftsData] = useState<NFT[] | []>([]);
 
   const fetchCollection = async () => {
-    if (!ownNFtLoading) {
+    if (!ownNFtLoading && address) {
       if (!ownNft) return nfts;
       ownNft.forEach((nft) => {
         const index = nfts.findIndex(
@@ -37,10 +36,12 @@ const Collection = () => {
       (nft) => nft.metadata.attributes[0].id == id
     );
     if (mintedNft) {
-      console.log("Already minted");
+      nfts[id].minted = true;
       return;
     }
-    const { name, description, url, price } = nfts[id];
+    const { name, description, url, price } = nfts.find(
+      (nft) => nft.id === id
+    )!;
     const metadata = {
       metadata: {
         name,
@@ -54,6 +55,7 @@ const Collection = () => {
     const signature = await contract?.signature.generate(metadata);
     try {
       await contract?.signature.mint(signature!);
+
       nfts[id].minted = true;
     } catch (error) {
       console.log(error);
