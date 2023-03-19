@@ -1,2 +1,2 @@
-export const contractAddress = "0x9daa0902C846634c0fC834A8F2aBbdb10dfB9961";
-export const network = "goerli";
+export const contractAddress = "0x333Bf74f4840afB94069FB76415CB34D113346cE";
+export const network = "binance";

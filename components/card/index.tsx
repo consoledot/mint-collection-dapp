@@ -15,7 +15,7 @@ const Card = ({
       <div className="mb-2">
         <div className="flex justify-between mb-4">
           <h2>{nft?.name}</h2>
-          <p className="font-bold">{nft?.price} ETH</p>
+          <p className="font-bold">{nft?.price} BNB</p>
         </div>
 
         <p>{nft?.description}</p>
