@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../card";
 import { NFT } from "../../types/nft";
-import {
-  useAddress,
-  useContract,
-  useOwnedNFTs,
-  useClaimNFT,
-} from "@thirdweb-dev/react";
+import { useAddress, useContract, useOwnedNFTs } from "@thirdweb-dev/react";
 import { contractAddress } from "../../utils/constant";
 import { nfts } from "../../data/nfts";
 
@@ -14,7 +9,6 @@ const Collection = () => {
   const address = useAddress();
   const { contract } = useContract(contractAddress, "nft-collection");
   const { data: ownNft, isLoading } = useOwnedNFTs(contract, address);
-  //   const {mutate} = useClaimNFT(contract)
   const [nftsData, setNftsData] = useState<NFT[] | []>([]);
 
   const fetchCollection = async () => {
