@@ -71,7 +71,7 @@ const Collection = () => {
     <section className="flex flex-col items-center justify-center mx-auto w-full my-10">
       <div className="flex justify-center">
         {!address ? (
-          <h1 className="text-3xl mt-2 md:mt-7 ">
+          <h1 className="text-3xl mt-2 md:mt-7 text-center">
             Connect Your Wallet: Binance Smart Chain (Mainnet)
           </h1>
         ) : (
