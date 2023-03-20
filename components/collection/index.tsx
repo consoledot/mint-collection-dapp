@@ -8,13 +8,16 @@ import { nfts } from "../../data/nfts";
 const Collection = () => {
   const address = useAddress();
   const { contract } = useContract(contractAddress, "nft-collection");
-  const { data: ownNft, isLoading } = useOwnedNFTs(contract, address);
+  const { data: ownNfts, isLoading } = useOwnedNFTs(contract, address);
   const [nftsData, setNftsData] = useState<NFT[] | []>([]);
 
   const fetchCollection = async () => {
     if (!isLoading && address) {
-      if (!ownNft) return nfts;
-      ownNft.forEach((nft) => {
+      //   This checks if any of the nfts is already part of the ownersNTFs,
+      //    if it's already minted add a new property "minted" to nfts and set as true for the minted nft,
+      //   if not return nft
+      if (!ownNfts) return nfts;
+      ownNfts.forEach((nft) => {
         const index = nfts.findIndex(
           // @ts-ignore
           (item) => item.id === nft.metadata.attributes[0].id
@@ -28,7 +31,7 @@ const Collection = () => {
     }
   };
   const mintNFT = async (id: number) => {
-    const mintedNft = ownNft?.find(
+    const mintedNft = ownNfts?.find(
       // @ts-ignore
       (nft) => nft.metadata.attributes[0].id == id
     );
@@ -63,7 +66,7 @@ const Collection = () => {
     setNftsData([]);
     fetchCollection();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ownNft, isLoading, address]);
+  }, [ownNfts, isLoading, address]);
   return (
     <section className="flex flex-col items-center justify-center mx-auto w-full my-10">
       <div className="flex justify-center">
