@@ -1,60 +1,58 @@
 import { NFT } from "../types/nft";
-
+import { storageLink } from "../utils/constant";
 export const nfts: NFT[] = [
   {
     id: 0,
     name: "NFT 1",
-    description: "This is our first amazing NFT",
-    url: "https://bafybeihgfxd5f5sqili34vyjyfai6kezlagrya43e6bkgw6hnxucxug5ya.ipfs.nftstorage.link/",
+    description: "This is our first NFT",
+    url: storageLink(
+      "bafkreibkl7qq72j3tlamzycppst6kchzm5lclctwtnjhq5hlizaq2j33mi"
+    ),
     price: 0.001,
   },
   {
     id: 1,
     name: "NFT 2",
-    description: "This is our second amazing NFT",
-    url: "https://bafybeida2kkclur4345iihiqb6pepfnwse7ko7pvrft4duxwxxwo2jqqjq.ipfs.nftstorage.link/",
-    price: 0.001,
+    description: "This is our second NFT",
+    url: storageLink(
+      "bafkreia3k5r4ekbbstbv32at57jcsch4qkht4l4vbcmajb5llw3dxuzpp4"
+    ),
+    price: 0.002,
   },
   {
     id: 2,
     name: "NFT 3",
-    description: "This is our third amazing NFT",
-    url: "https://bafybeidegtxcfpr43d6vbrippnm2csxqst7stxaxl3rp5vd27ss6yd3s5e.ipfs.nftstorage.link/",
+    description: "This is our third NFT",
+    url: storageLink(
+      "bafkreigxndxvnpjewnqx4r3q5xu3lygfhv5k62dturzcwqsgz7mv7jwa2a"
+    ),
     price: 0.001,
   },
   {
     id: 3,
     name: "NFT 4",
-    description: "This is our forth amazing NFT",
-    url: "https://bafybeieicywyvnaher24isrxoagjxbro6qr6kbzcz2feldbquoqeag7ivm.ipfs.nftstorage.link/",
-    price: 0.01,
+    description: "This is our forth NFT",
+    url: storageLink(
+      "bafkreiavn2frnpkmrgk4e563223uqriwaot27u2rlr7obpiemjzvvoffzq"
+    ),
+    price: 0.03,
   },
   {
     id: 4,
     name: "NFT 5",
-    description: "This is our fifth amazing NFT",
-    url: "https://bafybeieufjiaqny6q6kis2ehv2w6epwqzkeoscfc3ltck67dunrbvseczq.ipfs.nftstorage.link/",
+    description: "This is our fifth NFT",
+    url: storageLink(
+      "bafkreicfkk6ilbjykk4mvn7obfwxclubztppjbjwpafxws4x52mu65pipq"
+    ),
     price: 0.001,
   },
   {
     id: 5,
     name: "NFT 6",
-    description: "This is our sixth amazing NFT",
-    url: "https://bafybeiftcf7xruf4gmlbme6bos5tznlrvz46xfxdnofp3auibvzbizysoy.ipfs.nftstorage.link/",
-    price: 0.001,
-  },
-  {
-    id: 6,
-    name: "One Ape",
-    description: "Some bored ape",
-    url: "https://bafkreibkl7qq72j3tlamzycppst6kchzm5lclctwtnjhq5hlizaq2j33mi.ipfs.nftstorage.link/",
-    price: 0.001,
-  },
-  {
-    id: 7,
-    name: "Some other",
-    description: "maybe its me",
-    url: "https://bafkreia3k5r4ekbbstbv32at57jcsch4qkht4l4vbcmajb5llw3dxuzpp4.ipfs.nftstorage.link/",
+    description: "This is our sixth NFT",
+    url: storageLink(
+      "bafkreidxuv277qpkmmmaw5fiye7wvygne2eaaqfl6kh54kfwev7umdedce"
+    ),
     price: 0.001,
   },
 ];

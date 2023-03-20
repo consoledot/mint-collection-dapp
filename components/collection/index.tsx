@@ -65,7 +65,7 @@ const Collection = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ownNft, isLoading, address]);
   return (
-    <section className="grid justify-around mt-7 mx-8 ">
+    <section className="flex flex-col items-center justify-center mx-auto w-full my-10">
       <div className="flex justify-center">
         {!address ? (
           <h1 className="text-3xl mt-2 md:mt-7 ">
@@ -97,7 +97,8 @@ const Collection = () => {
           )
         )}
       </div>
-      <div className="flex flex-wrap justify-center md:justify-between gap-5 md:gap-10 max-auto w-full flex-start">
+
+      <div className="flex flex-wrap justify-center md:justify-around gap-6 md:gap-14 w-full max-w-[1200px] ">
         {nftsData &&
           address &&
           nftsData.length > 0 &&

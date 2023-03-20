@@ -9,7 +9,7 @@ const Card = ({
   onMint: (id: number) => Promise<void>;
 }) => {
   return (
-    <div className="w-100 ">
+    <div className="w-100 self-start ">
       {nft?.url && <MediaRenderer src={nft.url} />}
 
       <div className="mb-2 mt-2">
