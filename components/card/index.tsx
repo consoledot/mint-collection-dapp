@@ -12,7 +12,7 @@ const Card = ({
     <div className="w-100 ">
       {nft?.url && <MediaRenderer src={nft.url} />}
 
-      <div className="mb-2">
+      <div className="mb-2 mt-2">
         <div className="flex justify-between mb-4">
           <h2>{nft?.name}</h2>
           <p className="font-bold">{nft?.price} BNB</p>

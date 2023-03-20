@@ -60,12 +60,13 @@ const Collection = () => {
     }
   };
   useEffect(() => {
+    setNftsData([]);
     fetchCollection();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ownNft, isLoading, address]);
   return (
     <section className="grid justify-around mt-7 mx-8 ">
-      <div className="flex flex-wrap justify-center md:justify-between gap-5 md:gap-10 max-auto w-full flex-start">
+      <div className="flex justify-center">
         {!address ? (
           <h1 className="text-3xl mt-2 md:mt-7 ">
             Connect Your Wallet: Binance Smart Chain (Mainnet)
@@ -73,10 +74,10 @@ const Collection = () => {
         ) : (
           isLoading && (
             <>
-              <div role="status" className="place-self-center ">
+              <div role="status">
                 <svg
                   aria-hidden="true"
-                  className="w-20 h-10 mr-20 mt-20 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                  className="w-10 h-10 mr-20 ml-20 mt-20  text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                   viewBox="0 0 100 101"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +96,8 @@ const Collection = () => {
             </>
           )
         )}
-
+      </div>
+      <div className="flex flex-wrap justify-center md:justify-between gap-5 md:gap-10 max-auto w-full flex-start">
         {nftsData &&
           address &&
           nftsData.length > 0 &&
