@@ -15,7 +15,7 @@ const Collection = () => {
     if (!isLoading && address) {
       //   This checks if any of the nfts is already part of the ownersNTFs,
       //    if it's already minted add a new property "minted" to nfts and set as true for the minted nft,
-      //   if not return nft
+      //   if not return nfts
       if (!ownNfts) return nfts;
       ownNfts.forEach((nft) => {
         const index = nfts.findIndex(
